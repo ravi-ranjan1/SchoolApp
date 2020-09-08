@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{%extends 'SchoolApp/Base.html'%}
+{%load static%}
+{%block body_block%}
+<style>
+    body{
+    background-image:url('{%static 'Images/Class2_BG.jpg'%}')
+    }
+</style>
+
+
+
+{%for doc in docs%}
+<a href="{{doc.document.url}}" class="btn btn-primary btn-sm">Download</a>
+{%endfor%}
+{%endblock%}

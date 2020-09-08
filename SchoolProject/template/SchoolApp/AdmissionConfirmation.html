@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{%extends 'SchoolApp/Base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="alert alert-success">
+               {%for d in fullDetails%}
+
+
+        <H2 align="center">Congratulations!</H2><H3 align="center">{{d.Student_Name}} has been admitted successfully&#128522;</H3>
+        <H3 align="center">Please find the below details of {{d.Student_Name}}:</H3>
+        <table border="1" align="center">
+            <tr>
+                <th>Student Name</th>
+                <th>Class Name</th>
+                <th>Roll Number</th>
+            </tr>
+            <tr>
+                <td align="center">{{d.Student_Name}}</td>
+                <td align="center">{{d.Class_Name}}</td>
+                <td align="center">{{d.RollNo}}</td>
+            </tr>
+        </table>
+ {%endfor%}
+    </div>
+</div>
+
+
+{%endblock%}

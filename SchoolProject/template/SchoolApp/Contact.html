@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{%extends 'SchoolApp/Base.html'%}
+{%load static%}
+{%block body_block%}
+{% load crispy_forms_tags %}
+
+<style>
+    body{
+     background-color: #87ada1;
+    }
+</style>
+
+
+<p align="center" style="font-faimly:'Lucida Console', Courier, monospace; color:#000066; font-size:60px; ">-- Contact Us --</p>
+<div>
+<table style="margin-left:500px">
+    <tr>
+        <td>
+        <div class="container">
+            <p style="color:green"><b style="color:#000066">Address</b>: The Doon School, Mall Road, Dehradun, India 24800</p>
+            <p style="color:green" align="left"> <span class="glyphicon glyphicon-earphone" style="color:#000066"></span>&nbsp&nbsp +91-7418146722,+91-8610507520</p>
+            <p style="color:green" align="left"> <span class="glyphicon glyphicon-envelope" style="color:#000066"></span>&nbsp&nbsp 44ravi.ranjan@gmail.com</p>
+        </div>
+        </td>
+    </tr>
+</table>
+</div>
+
+<div align="center">
+<style>
+    input{max-width:18em}
+
+</style>
+<form method="post">
+    {{form|crispy}}
+    {%csrf_token%}
+    <input type="submit" value="Submit" class="btn btn-success btn-lg">
+</form>
+
+</div>
+{%endblock%}

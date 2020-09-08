@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%extends 'SchoolApp/Base.html'%}
+{%load static%}
+{%block body_block%}
+{%load custom_filters%}
+
+<table border="1" style="width:70%" align="center">
+    <thead>
+    <tr>
+        <th style="text-align:center">Name</th>
+        <th style="text-align:center">Image</th>
+        <th style="text-align:center">Video</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for d in data %}
+    <tr>
+        <td>{{d.Name|name_filter}}</td>
+        <td><img src="{{d.Image.url}}"></td>
+
+        <td>
+            {%if d.video_file%}
+        <video width="220" height="300" controls>
+            <source src="{{d.video_file.url}}" type="video/mp4">
+        </video>
+        {%endif%}
+        </td>
+    </tr>
+    </tbody>
+    {%endfor%}
+</table>
+
+
+{%endblock%}
