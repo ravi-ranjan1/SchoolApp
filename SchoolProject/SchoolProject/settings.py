@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'SchoolApp',
     'django_google_maps',
     'crispy_forms',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -138,7 +139,7 @@ MEDIA_URL='/media/'
 print (MEDIA_ROOT)
 
 LOGIN_REDIRECT_URL='/'
-LOGOUT_REDIRECT_URL='/logout'
+LOGOUT_REDIRECT_URL='/'
 
 GOOGLE_MAPS_API_KEY='AIzaSyCjljhNvzEeNdS50YwnFBzQD-FY5JQT1TQ'
 

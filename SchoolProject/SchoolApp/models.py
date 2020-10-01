@@ -44,3 +44,26 @@ class Admission(models.Model):
     City=models.CharField(max_length=100)
     RollNo=models.IntegerField(null=True)
 
+class Exam(models.Model):
+    Id=models.IntegerField(primary_key=True)
+    Student_Name=models.CharField(max_length=100)
+    Question=models.CharField(max_length=1000)
+    Answer=models.CharField(max_length=100)
+
+class Exam_Upload(models.Model):
+    Id=models.IntegerField(primary_key=True)
+    Question_file=models.FileField(upload_to='Documents/')
+
+
+
+class Questions(models.Model):
+    Id=models.IntegerField(primary_key=True)
+    Question=models.CharField(max_length=1000)
+    Option1=models.CharField(max_length=100)
+    Option2=models.CharField(max_length=100)
+    Option3=models.CharField(max_length=100)
+    Option4=models.CharField(max_length=100)
+
+class Answer(models.Model):
+    Id = models.IntegerField(primary_key=True)
+    Answer=models.CharField(max_length=100)

@@ -26,15 +26,25 @@
       <li><a href="/contact">Contact Us</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="/signup">SignUp</a> </li>
-        <li><a href="/accounts/login">Login</a></li>
+        {%if request.user.is_staff%}
+        <li><a href="#"><b>Upload Result</b></a> </li>
+        <li><a href="/upload"><b>Upload Tutorial</b></a> </li>
+        {%endif%}
+
+        {% if request.user.is_authenticated %}
         <li><a href="/accounts/logout">Logout</a></li>
+        {%else%}
+        <li><a href="/accounts/login">Login</a></li>
+        <li><a href="/signup">SignUp</a> </li>
+        {%endif%}
 
     </ul>
   </div>
 </nav>
 
+
 {%block body_block %}
 {% endblock %}
 </body>
+
 </html>

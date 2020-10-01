@@ -8,6 +8,8 @@
     background-image:url('{%static 'Images/Doon.jpg'%}') }
 </style>
 
+
+
 <div>
     <table  style="float:right; margin-right:100px">
 
@@ -24,11 +26,22 @@
                <marquee width="400%" direction="up" height="100%" scrollamount=4 onmouseover="this.stop()"
                         onmouseout="this.start()">
                    <a href="default.asp" target="_blank" style="color:red;font-size:35px;text-decoration:None">Results</a><br>
-                   <a href="default.asp" target="_blank" style="color:red;font-size:35px;text-decoration:None">Admission Notifications</a>
+                   <a href="default.asp" target="_blank" style="color:red;font-size:35px;text-decoration:None">Admission Notifications</a><br>  
+                   <a href="/Exam" target="_blank" style="color:red;font-size:35px;text-decoration:None">Weekly Exam</a>
 </marquee>
             </td>
         </tr>
     </table>
+</div>
+
+<div class="carousel-inner" role="listbox">
+    {% for i in images%}
+              <img src="{{i.Image.url}}" alt="Chania">
+
+                  <h1>{{image.caption}}</h1>
+
+
+    {%endfor%}
 </div>
 
 {%endblock%}

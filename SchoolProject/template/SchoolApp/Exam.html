@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{%extends 'SchoolApp/Base.html'%}
+{%block body_block%}
+<form method="post" enctype="multipart/form-data" action="">
+
+        {%csrf_token%}
+    <br><br><br><br><br><br><br>
+
+    {{ form }}
+
+
+
+        {% comment %}<ol type="1">
+    {% for k, v in form.items %}
+    <li>{{k}}</li>
+        {% for j in v.items %}
+            <input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;{{j.1}}</input><br>
+        {% endfor %}
+    {% endfor %}
+    </ol>{% endcomment %}
+
+    <input type="submit" class="btn btn-success btn-lg"></input>
+</form>
+
+{%endblock%}

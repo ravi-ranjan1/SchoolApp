@@ -30,6 +30,8 @@ urlpatterns = [
     url('^logout/',views.Logout),
     url('^contact/',views.Contact),
     url('^Admission/',views.AdmissionView),
-    url('^AdmissionConfirmation/',views.AdmissionCongrates)
+    url('^AdmissionConfirmation/',views.AdmissionCongrates),
+    url('^QuestionUpload/',views.Exam_Upload_view),
+    url('^Exam/',views.Exam_View)
 
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

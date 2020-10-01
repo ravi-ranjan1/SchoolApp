@@ -4,9 +4,9 @@
 {%block body_block%}
 {%load custom_filters%}
 
-<table border="1" style="width:70%" align="center">
+<table border="1px solid black" style="width:70%" align="center">
     <thead>
-    <tr>
+    <tr style="background-color:#709922">
         <th style="text-align:center">Name</th>
         <th style="text-align:center">Image</th>
         <th style="text-align:center">Video</th>
@@ -15,13 +15,13 @@
     </thead>
     <tbody>
     {% for d in data %}
-    <tr>
-        <td>{{d.Name|name_filter}}</td>
-        <td><img src="{{d.Image.url}}"></td>
+    <tr style="">
+        <td style="color:#225299; width:100px;text-align:center">{{d.Name|name_filter}}</td>
+        <td style="width:20px; "><a href="{{d.document.url}}" target="_blank" class="btn btn-primary btn-sm">Study Material</a></td>
 
         <td>
             {%if d.video_file%}
-        <video width="220" height="300" controls>
+        <video width="900px" height="500px" controls style="align:center;background-color:Black">
             <source src="{{d.video_file.url}}" type="video/mp4">
         </video>
         {%endif%}
